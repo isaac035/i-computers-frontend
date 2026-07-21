@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
 import { useState } from "react";
@@ -8,6 +8,7 @@ export default function LoginPage(){
 
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
+    const navigate = useNavigate()
 
 
     function handleLogin(){
@@ -20,17 +21,25 @@ export default function LoginPage(){
         )
         .then(
             (res)=>{
-                console.log(res.data.token)
-                console.log(res.data.isAdmin)
-
-                localStorage.setItem("token",res.data.token)
                 
                 toast.success("Login Success")
+
+                localStorage.setItem("token",res.data.token)
+
+                if(res.data.isAdmin){
+                    navigate("/admin")
+
+                }else{
+                     navigate("/")
+                }
+                
 
             }
         ).catch(
             (err)=>{
                 console.log(err)
+
+                toast.error("Login Failed")
             }
         )
     } 
@@ -46,7 +55,7 @@ export default function LoginPage(){
 
              <label className="text-4xl w-full mt-5 ml-9.5 text-secondary font-semibold">Email</label>
              <input 
-
+             value={email}
              onChange={
                 (e)=>{
                     setEmail(e.target.value)
@@ -57,7 +66,7 @@ export default function LoginPage(){
 
              <label className="text-4xl w-full mt-5 ml-9.5 text-secondary font-semibold">Password</label>
              <input 
-
+             value={password}
              onChange={
                 (e)=>{
                     setPassword(e.target.value)
@@ -70,9 +79,9 @@ export default function LoginPage(){
 
              <p className="w-full text-right mr-9.5"> Forget Password? Reset <Link to="/reset-Password" className="text-accent font-bold "> here </Link></p>
 
-             <button onClick={handleLogin} className="w-3xl mt-4 py-3 mb-3.5 text-lg font-semibold text-white bg-accent rounded-md hover:bg-accent/75 transition">Login</button>
+             <button onClick={handleLogin} className="w-3xl mt-4 py-3 mb-3.5 text-lg font-semibold text-white bg-accent rounded-md hover:bg-accent/75 hover:scale-[1.02] transition duration-200">Login</button>
 
-             <p className="w-full text-right mr-9.5 mb-3.5"> Do not have an account? Register <Link to="/register" className="text-accent font-bold "> here </Link></p>
+             <p className="w-full text-right mr-9.5 mb-3.5"> Do not have an account? Register <Link to="/register" className="text-accent font-bold  "> here </Link></p>
 
              <button className="w-3xl py-3 text-lg font-semibold text- bg-secondary/15 border border-secondary rounded-md hover:bg-gray-100/10 hover:scale-[1.02] transition duration-200 flex items-center justify-center gap-2.5"><FcGoogle />Login with Google</button>
 
