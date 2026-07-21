@@ -50,7 +50,7 @@ export default function LoginPage(){
             <div className="w-[850px] h-[1000px]  backdrop-blur-2xl shadow-2xl rounded-3xl flex flex-col  items-center  p-6" >
 
              
-             <img src="logo.svg" className="w-[200px] h-[200px] object-cover bg-accent/25" />
+             <img src="iLogo.png" className="w-[200px] h-[200px] object-cover " />
              <h1 className="text-6xl font-bold text-secondary mt-5 mb-5"> Login</h1>
 
              <label className="text-4xl w-full mt-5 ml-9.5 text-secondary font-semibold">Email</label>

@@ -15,12 +15,12 @@ export default function uploadMedia(file){
                 reject("No file selected")
             }else{
 
-                const timestamp = new Date.now().getTime();
+                const timestamp = new Date().getTime();
                 const fileName = timestamp+" "+file.name
 
-                supabase.storage.from("images").upload(filename,file).then(
+                supabase.storage.from("images").upload(fileName,file).then(
                     ()=>{
-                        const publicUrl = supabase.storage.from("images").getPublicUrl(filename).data.publicUrl;
+                        const publicUrl = supabase.storage.from("images").getPublicUrl(fileName).data.publicUrl;
 
                         resolve(publicUrl)
                     }

@@ -53,7 +53,7 @@ export default function RegisterPage(){
             <div className="w-[850px]   backdrop-blur-2xl shadow-2xl rounded-3xl flex flex-col  items-center  p-6" >
 
              
-             <img src="logo.svg" className="w-[200px] h-[200px] object-cover bg-accent/25" />
+             <img src="iLogo.png" className="w-[200px] h-[200px] object-cover " />
 
 
              <label className="text-4xl w-full mt-5 ml-9.5 text-secondary font-semibold">Email</label>
@@ -70,7 +70,7 @@ export default function RegisterPage(){
 
 
 
-             <div className="w-full flex flex-row gap-2 ">
+             <div className="w-full flex flex-row gap-2">
                 
              <div className="w-1/2  flex flex-col">
 
@@ -91,7 +91,7 @@ export default function RegisterPage(){
 
             <div className="w-1/2 flex flex-col">
 
-            <label className="text-4xl w-3xl mt-5 ml-9.5 text-secondary font-semibold">Last Name</label>
+            <label className="text-4xl w-full mt-5 ml-9.5 text-secondary font-semibold">Last Name</label>
              <input 
              value={lastName}
              onChange={
