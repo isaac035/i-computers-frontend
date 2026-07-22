@@ -1,31 +1,40 @@
 // import { useState } from "react";
 // import toast from "react-hot-toast";
 
-import { useState } from "react"
-import uploadMedia from "../lib/uploadMedia"
-import toast from "react-hot-toast"
+import LoadingAnimation from "../components/loadingAnimation";
+
+// import { useState } from "react"
+// import uploadMedia from "../lib/uploadMedia"
+// import toast from "react-hot-toast"
 
 export default function TestPage(){
 
-    const [file,setFile] = useState(null)
-
-       function uploadFile(){
-
-        
-                uploadMedia(file).then(
-                    (res)=>{
-                        console.log(res)
-                    }
-                ).catch(
-                    (err)=>{
-                        console.log(err)
-                        toast.error("Uploading failed")
-                    }
-                )
-            }
 
        return(
-        <div className="w-full h-full flex items-center justify-center">
+          < LoadingAnimation/>
+       )
+} 
+
+
+
+    // const [file,setFile] = useState(null)
+
+    //    function uploadFile(){
+
+        
+    //             uploadMedia(file).then(
+    //                 (res)=>{
+    //                     console.log(res)
+    //                 }
+    //             ).catch(
+    //                 (err)=>{
+    //                     console.log(err)
+    //                     toast.error("Uploading failed")
+    //                 }
+    //             )
+    //         }
+
+{/* <div className="w-full h-full flex items-center justify-center">
             < input type="file"
 
             multiple={true}
@@ -41,9 +50,7 @@ export default function TestPage(){
 
             <button onClick={uploadFile} className="bg-green-400 rounded-lg text-1xl h-8 w-15 text-white hover:bg-green-900 hover:scale-[1.02] transition duration-200 ">Submit</button>
 
-        </div>
-       )
-} 
+        </div> */}
 //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind4bnN0bm9wb3RydnN3d3pmdGdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ2MTg3MjMsImV4cCI6MjEwMDE5NDcyM30.SqRbPhbvX45Nsw4gNF2thXDPiNZFd4SX6A-BtRuQrbg
 //https://wxnstnopotrvswwzftgp.supabase.co
 // const [status, setStatus] = useState("Off")
