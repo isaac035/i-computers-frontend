@@ -4,6 +4,7 @@ import { IoStorefrontOutline } from "react-icons/io5";
 import { FaUserAlt } from "react-icons/fa";
 import AdminProductsPage from "./admin/adminProductsPage.jsx";
 import AddProductForm from "./admin/adminAddProductForm.jsx";
+import EditProductForm from "./admin/adminEditProductForm.jsx";
 
 
 export default function AdminPage(){
@@ -31,6 +32,7 @@ export default function AdminPage(){
                     <Route path="/products" element={<AdminProductsPage />}></Route>
                     <Route path="/users" element={<h1> Users Page</h1>}>Users Page</Route>
                     <Route path="/add-product" element={<AddProductForm />}></Route>
+                    <Route path="/edit-product" element={<EditProductForm />}></Route>
 
                 </Routes>
 
