@@ -13,11 +13,11 @@ import RegisterPage from "./pages/registerPage.jsx";
 
 function App() {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen bg-primary">
 
       <Toaster position='top-right'/>
       <Routes>
-        <Route path="/" element={<HomePage/>} />
+        <Route path="/*" element={<HomePage/>} />
         <Route path="/admin/*" element={<AdminPage/>} />
         <Route path="/test" element={<TestPage/>} />
         <Route path="/login" element={<LoginPage/>}/>
